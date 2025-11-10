@@ -1284,7 +1284,6 @@ const app = {
               <label class="form-label">商品説明</label>
               <textarea class="form-textarea" id="productDesc"></textarea>
 
-```
         </div>
         
         <div class="form-group">
@@ -1319,7 +1318,6 @@ this.setupDropzone('imageDropzone', 'imageInput', ['image/jpeg', 'image/png', 'i
   (file) => this.handleImageSelect(file), false);
 this.setupDropzone('filesDropzone', 'filesInput', ['text/csv', 'application/pdf'], 
   (files) => this.handleFilesSelect(files), true);
-```
 
 },
 
@@ -1327,7 +1325,6 @@ setupDropzone(dropzoneId, inputId, acceptTypes, handler, multiple) {
 const dropzone = document.getElementById(dropzoneId);
 const input = document.getElementById(inputId);
 
-```
 dropzone.addEventListener('click', () => input.click());
 
 dropzone.addEventListener('dragover', (e) => {
@@ -1363,7 +1360,6 @@ input.addEventListener('change', (e) => {
     }
   }
 });
-```
 
 },
 
@@ -1373,7 +1369,6 @@ utils.showToast(‘画像は5MB以下にしてください’, ‘error’);
 return;
 }
 
-```
 utils.compressImage(file).then(base64 => {
   // 圧縮結果をキャッシュに保存
   this.compressedImageCache = base64;
@@ -1392,7 +1387,6 @@ utils.compressImage(file).then(base64 => {
   utils.showToast('画像の処理に失敗しました', 'error');
   console.error(error);
 });
-```
 
 },
 
@@ -1412,7 +1406,6 @@ return false;
 return true;
 });
 
-```
 const preview = document.getElementById('filesPreview');
 preview.innerHTML = validFiles.map((f, i) => `
   <div class="file-item" data-index="${i}">
@@ -1426,14 +1419,12 @@ preview.innerHTML = validFiles.map((f, i) => `
     <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">削除</button>
   </div>
 `).join('');
-```
 
 },
 
 async handleProductRegister(e) {
 e.preventDefault();
 
-```
 const product = {
   id: utils.uuid(),
   manufacturerName: this.currentUser.company,
@@ -1485,14 +1476,12 @@ this.compressedImageCache = null;
 document.getElementById('productForm').reset();
 document.getElementById('imagePreview').innerHTML = '';
 document.getElementById('filesPreview').innerHTML = '';
-```
 
 },
 
 renderProductList() {
 const products = db.getProducts().filter(p => p.manufacturerName === this.currentUser.company);
 
-```
 const main = document.getElementById('main');
 main.innerHTML = `
   <div class="container">
@@ -1526,7 +1515,6 @@ main.innerHTML = `
     </div>
   </div>
 `;
-```
 
 },
 
@@ -1535,7 +1523,6 @@ const imageSrc = product.imageBase64
 ? `data:image/jpeg;base64,${product.imageBase64}`
 : null;
 
-```
 const isSelected = this.selectedItems.has(product.id);
 
 return `
@@ -1569,7 +1556,6 @@ return `
     </div>
   </div>
 `;
-```
 
 },
 
@@ -1577,7 +1563,6 @@ editProduct(id) {
 const product = db.getProductById(id);
 if (!product) return;
 
-```
 location.hash = '#products/register';
 
 // フォームに既存データを設定
@@ -1628,7 +1613,6 @@ setTimeout(() => {
   
   utils.showToast('編集モードです', 'success');
 }, 100);
-```
 
 },
 
@@ -1645,7 +1629,6 @@ this.renderEditAttachments();
 async handleProductEdit(e, productId) {
 e.preventDefault();
 
-```
 const existingProduct = db.getProductById(productId);
 
 const product = {
@@ -1686,7 +1669,6 @@ this.compressedImageCache = null;
 window.editingAttachments = null;
 
 location.hash = '#products/list';
-```
 
 },
 
@@ -1701,7 +1683,6 @@ this.renderProductList();
 bulkDeleteProducts() {
 if (this.selectedItems.size === 0) return;
 
-```
 if (confirm(`選択した${this.selectedItems.size}件の商品を削除しますか？`)) {
   this.selectedItems.forEach(id => {
     db.deleteProduct(id);
@@ -1711,14 +1692,12 @@ if (confirm(`選択した${this.selectedItems.size}件の商品を削除しま�
   this.selectionMode = false;
   this.renderProductList();
 }
-```
 
 },
 
 renderCatalog() {
 const products = db.getProducts();
 
-```
 const main = document.getElementById('main');
 main.innerHTML = `
   <div class="container">
@@ -1829,7 +1808,6 @@ document.getElementById('manufacturerFilter').addEventListener('change', renderF
 document.getElementById('priceFilter').addEventListener('change', renderFiltered);
 document.getElementById('sortBy').addEventListener('change', renderFiltered);
 renderFiltered();
-```
 
 },
 
@@ -1837,7 +1815,6 @@ renderRequestsInbox() {
 const requests = db.getQuoteRequests()
 .filter(r => r.manufacturerName === this.currentUser.company);
 
-```
 const main = document.getElementById('main');
 main.innerHTML = `
   <div class="container">
@@ -1951,7 +1928,6 @@ document.getElementById('dateFrom').addEventListener('change', () => { currentPa
 document.getElementById('dateTo').addEventListener('change', () => { currentPage = 1; renderFiltered(); });
 document.getElementById('sortBy').addEventListener('change', renderFiltered);
 renderFiltered();
-```
 
 },
 
@@ -1959,7 +1935,6 @@ renderRequestsSent() {
 const requests = db.getQuoteRequests()
 .filter(r => r.wholesalerName === this.currentUser.company);
 
-```
 const main = document.getElementById('main');
 main.innerHTML = `
   <div class="container">
@@ -2069,7 +2044,6 @@ document.getElementById('dateFrom').addEventListener('change', () => { currentPa
 document.getElementById('dateTo').addEventListener('change', () => { currentPage = 1; renderFiltered(); });
 document.getElementById('sortBy').addEventListener('change', renderFiltered);
 renderFiltered();
-```
 
 },
 
@@ -2079,7 +2053,6 @@ document.getElementById(containerId).innerHTML = ‘’;
 return;
 }
 
-```
 const container = document.getElementById(containerId);
 const pages = [];
 
@@ -2123,7 +2096,6 @@ container.innerHTML = `
     </button>
   </div>
 `;
-```
 
 },
 
@@ -2143,13 +2115,11 @@ ${actionsFn ? `<td>${actionsFn(row)}</td>` : ‘’}
 renderDetail(param) {
 const [type, id] = param.split(’/’);
 
-```
 if (type === 'product') {
   this.renderProductDetail(id);
 } else if (type === 'request') {
   this.renderRequestDetail(id);
 }
-```
 
 },
 
@@ -2160,7 +2130,6 @@ document.getElementById(‘main’).innerHTML = ‘<div class="container empty-s
 return;
 }
 
-```
 const imageSrc = product.imageBase64 
   ? `data:image/jpeg;base64,${product.imageBase64}`
   : null;
@@ -2238,14 +2207,12 @@ main.innerHTML = `
     ` : ''}
   </div>
 `;
-```
 
 },
 
 handleQuoteRequest(e, productId) {
 e.preventDefault();
 
-```
 const product = db.getProductById(productId);
 
 const request = {
@@ -2275,7 +2242,6 @@ db.addNotification({
 
 utils.showToast('見積依頼を送信しました', 'success');
 location.hash = '#requests/sent';
-```
 
 },
 
@@ -2286,7 +2252,6 @@ document.getElementById(‘main’).innerHTML = ‘<div class="container empty-s
 return;
 }
 
-```
 // 既読マーク（問屋が見る場合）
 if (request.wholesalerName === this.currentUser.company && request.status === 'quoted') {
   db.markAsRead(this.currentUser.company, request.id);
@@ -2386,7 +2351,6 @@ if (canUpload) {
   this.setupDropzone('quoteDropzone', 'quoteInput', ['text/csv', 'application/pdf'], 
     (files) => this.handleQuoteFilesSelect(files), true);
 }
-```
 
 },
 
@@ -2400,7 +2364,6 @@ return false;
 return true;
 });
 
-```
 const preview = document.getElementById('quotePreview');
 preview.innerHTML = validFiles.map((f, i) => `
   <div class="file-item">
@@ -2414,14 +2377,12 @@ preview.innerHTML = validFiles.map((f, i) => `
     <button type="button" class="btn btn-danger btn-sm" onclick="this.parentElement.remove()">削除</button>
   </div>
 `).join('');
-```
 
 },
 
 async handleQuoteUpload(e, requestId) {
 e.preventDefault();
 
-```
 const input = document.getElementById('quoteInput');
 if (input.files.length === 0) {
   utils.showToast('ファイルを選択してください', 'error');
@@ -2467,7 +2428,6 @@ db.addNotification({
 
 utils.showToast('見積書を送信しました', 'success');
 this.renderRequestDetail(requestId);
-```
 
 },
 
@@ -2476,7 +2436,6 @@ const quotes = db.getQuotes();
 const quote = quotes.find(q => q.id === quoteId);
 if (!quote || !quote.files[fileIndex]) return;
 
-```
 const file = quote.files[fileIndex];
 const base64 = file.base64;
 const text = atob(base64);
@@ -2539,7 +2498,6 @@ const renderCsvPage = () => {
 };
 
 renderCsvPage();
-```
 
 },
 
@@ -2548,7 +2506,6 @@ const notifications = db.getNotifications()
 .filter(n => n.targetCompany === this.currentUser.company)
 .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
-```
 const main = document.getElementById('main');
 main.innerHTML = `
   <div class="container">
@@ -2600,7 +2557,6 @@ main.innerHTML = `
     </div>
   </div>
 `;
-```
 
 },
 
@@ -2631,7 +2587,6 @@ quotes: db.getQuotes()
 const storageLimit = 5 * 1024 * 1024; // 5MB
 const usagePercent = ((storageUsed / storageLimit) * 100).toFixed(1);
 
-```
 modal.innerHTML = `
   <div class="modal" onclick="if(event.target===this) this.innerHTML=''">
     <div class="modal-content" style="max-width:600px">
@@ -2696,14 +2651,12 @@ modal.innerHTML = `
     </div>
   </div>
 `;
-```
 
 },
 
 handleImport(input) {
 if (input.files.length === 0) return;
 
-```
 utils.importData(input.files[0])
   .then(() => {
     document.getElementById('modalContainer').innerHTML = '';
@@ -2712,7 +2665,6 @@ utils.importData(input.files[0])
   .catch(error => {
     utils.showToast(error.message, 'error');
   });
-```
 
 },
 
