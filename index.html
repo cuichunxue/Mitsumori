@@ -28,16 +28,16 @@
 }
 
 body {
-font-family: -apple-system, BlinkMacSystemFont, ‘Segoe UI’, ‘Hiragino Sans’, sans-serif;
-background: var(–gray-50);
-color: var(–gray-900);
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif;
+background: var(--gray-50);
+color: var(--gray-900);
 line-height: 1.6;
 }
 
 /* ========== Header ========== */
 .header {
 background: white;
-box-shadow: var(–shadow);
+box-shadow: var(--shadow);
 position: sticky;
 top: 0;
 z-index: 100;
@@ -56,7 +56,7 @@ gap: 2rem;
 .logo {
 font-size: 1.25rem;
 font-weight: 700;
-color: var(–primary);
+color: var(--primary);
 display: flex;
 align-items: center;
 gap: 0.5rem;
@@ -72,20 +72,20 @@ flex: 1;
 padding: 0.5rem 1rem;
 background: transparent;
 border: none;
-border-radius: var(–radius);
+border-radius: var(--radius);
 cursor: pointer;
 font-size: 0.9rem;
-color: var(–gray-700);
-transition: var(–transition);
+color: var(--gray-700);
+transition: var(--transition);
 position: relative;
 }
 
 .nav-btn:hover {
-background: var(–gray-100);
+background: var(--gray-100);
 }
 
 .nav-btn.active {
-background: var(–primary);
+background: var(--primary);
 color: white;
 }
 
@@ -93,7 +93,7 @@ color: white;
 position: absolute;
 top: 2px;
 right: 2px;
-background: var(–danger);
+background: var(--danger);
 color: white;
 font-size: 0.7rem;
 padding: 2px 6px;
@@ -108,39 +108,39 @@ display: flex;
 align-items: center;
 gap: 1rem;
 font-size: 0.9rem;
-color: var(–gray-700);
+color: var(--gray-700);
 }
 
 .btn {
 padding: 0.5rem 1rem;
 border: none;
-border-radius: var(–radius);
+border-radius: var(--radius);
 cursor: pointer;
 font-size: 0.9rem;
-transition: var(–transition);
+transition: var(--transition);
 font-weight: 500;
 }
 
 .btn-primary {
-background: var(–primary);
+background: var(--primary);
 color: white;
 }
 
 .btn-primary:hover:not(:disabled) {
-background: var(–primary-dark);
+background: var(--primary-dark);
 }
 
 .btn-secondary {
-background: var(–gray-200);
-color: var(–gray-700);
+background: var(--gray-200);
+color: var(--gray-700);
 }
 
 .btn-secondary:hover {
-background: var(–gray-300);
+background: var(--gray-300);
 }
 
 .btn-danger {
-background: var(–danger);
+background: var(--danger);
 color: white;
 }
 
@@ -163,8 +163,8 @@ padding: 2rem 1.5rem;
 
 .card {
 background: white;
-border-radius: var(–radius);
-box-shadow: var(–shadow);
+border-radius: var(--radius);
+box-shadow: var(--shadow);
 padding: 1.5rem;
 margin-bottom: 1.5rem;
 }
@@ -173,7 +173,7 @@ margin-bottom: 1.5rem;
 font-size: 1.25rem;
 font-weight: 600;
 margin-bottom: 1rem;
-color: var(–gray-900);
+color: var(--gray-900);
 }
 
 /* ========== Forms ========== */
@@ -185,22 +185,22 @@ margin-bottom: 1.25rem;
 display: block;
 font-weight: 500;
 margin-bottom: 0.5rem;
-color: var(–gray-700);
+color: var(--gray-700);
 font-size: 0.9rem;
 }
 
 .form-input, .form-select, .form-textarea {
 width: 100%;
 padding: 0.625rem;
-border: 1px solid var(–gray-300);
-border-radius: var(–radius);
+border: 1px solid var(--gray-300);
+border-radius: var(--radius);
 font-size: 0.9rem;
-transition: var(–transition);
+transition: var(--transition);
 }
 
 .form-input:focus, .form-select:focus, .form-textarea:focus {
 outline: none;
-border-color: var(–primary);
+border-color: var(--primary);
 box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
@@ -218,17 +218,17 @@ gap: 1rem;
 
 /* ========== Dropzone ========== */
 .dropzone {
-border: 2px dashed var(–gray-300);
-border-radius: var(–radius);
+border: 2px dashed var(--gray-300);
+border-radius: var(--radius);
 padding: 2rem;
 text-align: center;
 cursor: pointer;
-transition: var(–transition);
-background: var(–gray-50);
+transition: var(--transition);
+background: var(--gray-50);
 }
 
 .dropzone:hover, .dropzone.drag-over {
-border-color: var(–primary);
+border-color: var(--primary);
 background: rgba(37, 99, 235, 0.05);
 }
 
@@ -246,8 +246,8 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 padding: 0.75rem;
-background: var(–gray-50);
-border-radius: var(–radius);
+background: var(--gray-50);
+border-radius: var(--radius);
 margin-bottom: 0.5rem;
 }
 
@@ -273,7 +273,7 @@ font-size: 0.9rem;
 
 .file-size {
 font-size: 0.8rem;
-color: var(–gray-600);
+color: var(--gray-600);
 }
 
 /* ========== Product Cards ========== */
@@ -286,21 +286,21 @@ margin-top: 1rem;
 
 .product-card {
 background: white;
-border-radius: var(–radius);
-box-shadow: var(–shadow);
+border-radius: var(--radius);
+box-shadow: var(--shadow);
 overflow: hidden;
-transition: var(–transition);
+transition: var(--transition);
 cursor: pointer;
 position: relative;
 }
 
 .product-card:hover {
-box-shadow: var(–shadow-lg);
+box-shadow: var(--shadow-lg);
 transform: translateY(-2px);
 }
 
 .product-card.selected {
-border: 2px solid var(–primary);
+border: 2px solid var(--primary);
 box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
@@ -308,7 +308,7 @@ box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 width: 100%;
 height: 200px;
 object-fit: cover;
-background: var(–gray-100);
+background: var(--gray-100);
 display: flex;
 align-items: center;
 justify-content: center;
@@ -323,19 +323,19 @@ padding: 1rem;
 font-size: 1.1rem;
 font-weight: 600;
 margin-bottom: 0.5rem;
-color: var(–gray-900);
+color: var(--gray-900);
 }
 
 .product-meta {
 font-size: 0.85rem;
-color: var(–gray-600);
+color: var(--gray-600);
 margin-bottom: 0.5rem;
 }
 
 .product-price {
 font-size: 1.2rem;
 font-weight: 700;
-color: var(–primary);
+color: var(--primary);
 margin-top: 0.5rem;
 }
 
@@ -370,31 +370,31 @@ font-size: 0.9rem;
 }
 
 thead {
-background: var(–gray-50);
+background: var(--gray-50);
 }
 
 th {
 padding: 0.75rem;
 text-align: left;
 font-weight: 600;
-color: var(–gray-700);
-border-bottom: 2px solid var(–gray-200);
+color: var(--gray-700);
+border-bottom: 2px solid var(--gray-200);
 cursor: pointer;
 user-select: none;
 white-space: nowrap;
 }
 
 th:hover {
-background: var(–gray-100);
+background: var(--gray-100);
 }
 
 td {
 padding: 0.75rem;
-border-bottom: 1px solid var(–gray-200);
+border-bottom: 1px solid var(--gray-200);
 }
 
 tr:hover {
-background: var(–gray-50);
+background: var(--gray-50);
 }
 
 .status-badge {
@@ -425,22 +425,22 @@ flex-wrap: wrap;
 
 .page-btn {
 padding: 0.5rem 0.75rem;
-border: 1px solid var(–gray-300);
+border: 1px solid var(--gray-300);
 background: white;
-border-radius: var(–radius);
+border-radius: var(--radius);
 cursor: pointer;
 font-size: 0.9rem;
-transition: var(–transition);
+transition: var(--transition);
 }
 
 .page-btn:hover:not(:disabled) {
-background: var(–gray-100);
+background: var(--gray-100);
 }
 
 .page-btn.active {
-background: var(–primary);
+background: var(--primary);
 color: white;
-border-color: var(–primary);
+border-color: var(--primary);
 }
 
 .page-btn:disabled {
@@ -465,16 +465,16 @@ padding: 1rem;
 
 .modal-content {
 background: white;
-border-radius: var(–radius);
+border-radius: var(--radius);
 max-width: 90vw;
 max-height: 90vh;
 overflow: auto;
-box-shadow: var(–shadow-lg);
+box-shadow: var(--shadow-lg);
 }
 
 .modal-header {
 padding: 1.5rem;
-border-bottom: 1px solid var(–gray-200);
+border-bottom: 1px solid var(--gray-200);
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -498,19 +498,19 @@ background: none;
 border: none;
 font-size: 1.5rem;
 cursor: pointer;
-color: var(–gray-600);
+color: var(--gray-600);
 padding: 0;
 width: 32px;
 height: 32px;
 display: flex;
 align-items: center;
 justify-content: center;
-border-radius: var(–radius);
-transition: var(–transition);
+border-radius: var(--radius);
+transition: var(--transition);
 }
 
 .close-btn:hover {
-background: var(–gray-100);
+background: var(--gray-100);
 }
 
 /* ========== CSV Preview ========== */
@@ -535,22 +535,22 @@ max-height: 500px;
 position: fixed;
 bottom: 2rem;
 right: 2rem;
-background: var(–gray-900);
+background: var(--gray-900);
 color: white;
 padding: 1rem 1.5rem;
-border-radius: var(–radius);
-box-shadow: var(–shadow-lg);
+border-radius: var(--radius);
+box-shadow: var(--shadow-lg);
 z-index: 1000;
 animation: slideIn 0.3s ease;
 max-width: 400px;
 }
 
 .toast.success {
-background: var(–success);
+background: var(--success);
 }
 
 .toast.error {
-background: var(–danger);
+background: var(--danger);
 }
 
 @keyframes slideIn {
@@ -576,8 +576,8 @@ padding: 1rem;
 .login-card {
 background: white;
 padding: 2.5rem;
-border-radius: var(–radius);
-box-shadow: var(–shadow-lg);
+border-radius: var(--radius);
+box-shadow: var(--shadow-lg);
 width: 100%;
 max-width: 400px;
 }
@@ -587,7 +587,7 @@ font-size: 1.75rem;
 font-weight: 700;
 text-align: center;
 margin-bottom: 2rem;
-color: var(–primary);
+color: var(--primary);
 }
 
 /* ========== Responsive ========== */
@@ -641,7 +641,7 @@ padding: 0.5rem;
 .gap-2 { gap: 1rem; }
 .empty-state {
 text-align: center;
-color: var(–gray-600);
+color: var(--gray-600);
 padding: 3rem 1rem;
 font-size: 1rem;
 }
@@ -1365,7 +1365,7 @@ input.addEventListener('change', (e) => {
 
 handleImageSelect(file) {
 if (file.size > 5 * 1024 * 1024) {
-utils.showToast(‘画像は5MB以下にしてください’, ‘error’);
+utils.showToast('画像は5MB以下にしてください', 'error');
 return;
 }
 
@@ -1392,15 +1392,15 @@ utils.compressImage(file).then(base64 => {
 
 clearImageCache() {
 this.compressedImageCache = null;
-document.getElementById(‘imagePreview’).innerHTML = ‘’;
-document.getElementById(‘imageInput’).value = ‘’;
+document.getElementById('imagePreview').innerHTML = '';
+document.getElementById('imageInput').value = '';
 },
 
 handleFilesSelect(files) {
 const maxSize = 10 * 1024 * 1024;
 const validFiles = files.filter(f => {
 if (f.size > maxSize) {
-utils.showToast(`${f.name}は10MB以下にしてください`, ‘error’);
+utils.showToast(`${f.name}は10MB以下にしてください`, 'error');
 return false;
 }
 return true;
@@ -1617,8 +1617,8 @@ setTimeout(() => {
 },
 
 renderEditAttachments() {
-const preview = document.getElementById(‘filesPreview’);
-preview.innerHTML = window.editingAttachments.map((f, i) => `<div class="file-item" data-index="${i}"> <div class="file-info"> <div class="file-icon">${f.mime.includes('pdf') ? '📕' : '📄'}</div> <div class="file-details"> <div class="file-name">${f.filename}</div> <div class="file-size">${utils.formatFileSize(f.size)}</div> </div> </div> <button type="button" class="btn btn-danger btn-sm" onclick="app.removeEditAttachment(${i})">削除</button> </div>`).join(’’);
+const preview = document.getElementById('filesPreview');
+preview.innerHTML = window.editingAttachments.map((f, i) => `<div class="file-item" data-index="${i}"> <div class="file-info"> <div class="file-icon">${f.mime.includes('pdf') ? '📕' : '📄'}</div> <div class="file-details"> <div class="file-name">${f.filename}</div> <div class="file-size">${utils.formatFileSize(f.size)}</div> </div> </div> <button type="button" class="btn btn-danger btn-sm" onclick="app.removeEditAttachment(${i})">削除</button> </div>`).join('');
 },
 
 removeEditAttachment(index) {
@@ -1673,9 +1673,9 @@ location.hash = '#products/list';
 },
 
 deleteProduct(id) {
-if (confirm(‘本当に削除しますか？’)) {
+if (confirm('本当に削除しますか？')) {
 db.deleteProduct(id);
-utils.showToast(‘商品を削除しました’, ‘success’);
+utils.showToast('商品を削除しました', 'success');
 this.renderProductList();
 }
 },
@@ -2049,7 +2049,7 @@ renderFiltered();
 
 renderPagination(containerId, currentPage, totalPages, callbackName) {
 if (totalPages <= 1) {
-document.getElementById(containerId).innerHTML = ‘’;
+document.getElementById(containerId).innerHTML = '';
 return;
 }
 
@@ -2106,14 +2106,14 @@ ${columns.map(col => {
 const value = row[col.key];
 const formatted = col.format ? col.format(value, row) : value;
 return `<td>${formatted}</td>`;
-}).join(’’)}
-${actionsFn ? `<td>${actionsFn(row)}</td>` : ‘’}
+}).join('')}
+${actionsFn ? `<td>${actionsFn(row)}</td>` : ''}
 </tr>
 `).join('')} </tbody> </table> </div> `;
 },
 
 renderDetail(param) {
-const [type, id] = param.split(’/’);
+const [type, id] = param.split('/');
 
 if (type === 'product') {
   this.renderProductDetail(id);
@@ -2126,7 +2126,7 @@ if (type === 'product') {
 renderProductDetail(id) {
 const product = db.getProductById(id);
 if (!product) {
-document.getElementById(‘main’).innerHTML = ‘<div class="container empty-state">商品が見つかりません</div>’;
+document.getElementById('main').innerHTML = '<div class="container empty-state">商品が見つかりません</div>';
 return;
 }
 
@@ -2248,7 +2248,7 @@ location.hash = '#requests/sent';
 renderRequestDetail(id) {
 const request = db.getQuoteRequestById(id);
 if (!request) {
-document.getElementById(‘main’).innerHTML = ‘<div class="container empty-state">見積依頼が見つかりません</div>’;
+document.getElementById('main').innerHTML = '<div class="container empty-state">見積依頼が見つかりません</div>';
 return;
 }
 
@@ -2358,7 +2358,7 @@ handleQuoteFilesSelect(files) {
 const maxSize = 10 * 1024 * 1024;
 const validFiles = files.filter(f => {
 if (f.size > maxSize) {
-utils.showToast(`${f.name}は10MB以下にしてください`, ‘error’);
+utils.showToast(`${f.name}は10MB以下にしてください`, 'error');
 return false;
 }
 return true;
@@ -2578,7 +2578,7 @@ location.hash = link;
 },
 
 showDataManagement() {
-const modal = document.getElementById(‘modalContainer’);
+const modal = document.getElementById('modalContainer');
 const storageUsed = new Blob([JSON.stringify({
 products: db.getProducts(),
 quoteRequests: db.getQuoteRequests(),
@@ -2669,10 +2669,10 @@ utils.importData(input.files[0])
 },
 
 confirmClearData() {
-if (confirm(‘本当に全データを削除しますか？この操作は取り消せません。’)) {
-if (confirm(‘最終確認：全データが完全に削除されます。よろしいですか？’)) {
+if (confirm('本当に全データを削除しますか？この操作は取り消せません。')) {
+if (confirm('最終確認：全データが完全に削除されます。よろしいですか？')) {
 storage.clear();
-utils.showToast(‘全データを削除しました’, ‘success’);
+utils.showToast('全データを削除しました', 'success');
 location.reload();
 }
 }
